@@ -68,8 +68,12 @@ class CrossPads(pya.PCellDeclarationHelper):
     self.pl = self.cl = self.shape.bbox().width() * self.layout.dbu / 4
     self.b1 = self.shape.bbox().width() * self.layout.dbu
     self.b2 = self.shape.bbox().height() * self.layout.dbu
-    self.cw = self.shape.bbox().width() * self.layout.dbu / 10
-    self.pw = self.shape.bbox().width() * self.layout.dbu / 5
+    if self.shape.bbox().width() < self.shape.bbox().height():
+      self.cw = self.shape.bbox().width() * self.layout.dbu / 10
+      self.pw = self.shape.bbox().width() * self.layout.dbu / 5
+    else:
+      self.cw = self.shape.bbox().height() * self.layout.dbu / 10
+      self.pw = self.shape.bbox().height() * self.layout.dbu / 5
     self.l = self.layout.get_info(self.layer)
   
   def transformation_from_shape_impl(self):
