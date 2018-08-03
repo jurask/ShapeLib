@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description/>
+ <version/>
+ <category>pymacros</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>true</autorun>
+ <autorun-early>false</autorun-early>
+ <shortcut/>
+ <show-in-menu>false</show-in-menu>
+ <group-name/>
+ <menu-path/>
+ <interpreter>python</interpreter>
+ <dsl-interpreter-name/>
+ <text>import pya
+from diabolo import Diabolo
+from bowtie import Bowtie
+
+class Plasmonics(pya.Library):
+
+  def __init__(self):
+  
+    # Set the description
+    self.description = "Plasmonic structures"
+    
+    # Create the PCell declarations
+    self.layout().register_pcell("Diabolo", Diabolo())
+    self.layout().register_pcell("Bowtie", Bowtie())
+    
+    # If a library with that name already existed, it will be replaced then.
+    self.register("Plasmonics")
+
+
+# Instantiate and register the library
+Plasmonics()
+</text>
+</klayout-macro>
