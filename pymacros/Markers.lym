@@ -18,6 +18,7 @@
 from cross import Cross
 from crossPads import CrossPads
 from crossPadsExt import CrossPadsExt
+from crossRectangle import CrossRectangle
 
 
 class Markers(pya.Library):
@@ -31,7 +32,8 @@ class Markers(pya.Library):
     self.layout().register_pcell("Cross", Cross())
     self.layout().register_pcell("Cross with pads", CrossPads())
     self.layout().register_pcell("Cross with extended pads", CrossPadsExt())
-    
+    self.layout().register_pcell("Cross with rectangles", CrossRectangle())
+
     # If a library with that name already existed, it will be replaced then.
     self.register("Markers")
 
