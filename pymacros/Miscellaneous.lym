@@ -16,6 +16,8 @@
  <dsl-interpreter-name/>
  <text>import pya
 from star import Star
+from arrow import Arrow
+
 
 class Miscellaneous(pya.Library):
 
@@ -26,6 +28,7 @@ class Miscellaneous(pya.Library):
     
     # Create the PCell declarations
     self.layout().register_pcell("Star", Star())
+    self.layout().register_pcell("Arrow", Arrow())
     
     # If a library with that name already existed, it will be replaced then.
     self.register("Miscellaneous")
