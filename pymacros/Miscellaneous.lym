@@ -18,6 +18,7 @@
 from star import Star
 from arrow import Arrow
 from image import Image
+from text import TText
 
 
 class Miscellaneous(pya.Library):
@@ -31,6 +32,7 @@ class Miscellaneous(pya.Library):
     self.layout().register_pcell("Star", Star())
     self.layout().register_pcell("Arrow", Arrow())
     self.layout().register_pcell("Image", Image())
+    self.layout().register_pcell("TrueType Text", TText())
 
     # If a library with that name already existed, it will be replaced then.
     self.register("Miscellaneous")
