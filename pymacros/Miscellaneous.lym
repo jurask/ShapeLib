@@ -17,6 +17,7 @@
  <text>import pya
 from star import Star
 from arrow import Arrow
+from image import Image
 
 
 class Miscellaneous(pya.Library):
@@ -29,7 +30,8 @@ class Miscellaneous(pya.Library):
     # Create the PCell declarations
     self.layout().register_pcell("Star", Star())
     self.layout().register_pcell("Arrow", Arrow())
-    
+    self.layout().register_pcell("Image", Image())
+
     # If a library with that name already existed, it will be replaced then.
     self.register("Miscellaneous")
 
