@@ -78,8 +78,13 @@ class Image(pya.PCellDeclarationHelper):
         tile = image.copy(tilex*self.t, tiley*self.t, self.t, self.t)
         polygons = []
         # generate pixels
-        for y in range(self.t):
-          for x in range(self.t):
+        rangex = rangey = self.t
+        if self.t * (tilex + 1) > width:
+          rangex = width % self.t
+        if self.t * (tiley + 1) > height:
+          rangey = height % self.t
+        for y in range(rangey):
+          for x in range(rangex):
             color = pya.QColor(tile.pixel(x, y))
             color = (color.red+color.green+color.blue)/3
             if (color > self.th and not self.inv) or (color <= self.th and self.inv):
